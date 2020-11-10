@@ -1,0 +1,27 @@
+.cocktail-card {
+  position: relative;
+  text-align: center;
+  margin: 20px 30px;
+}
+
+.cocktail-card:hover {
+  background-color:#000;
+  opacity:0.5;
+  transition: 0.4s;
+}
+
+.name {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cocktails {
+	display: flex;
+	justify-content: center;
+}

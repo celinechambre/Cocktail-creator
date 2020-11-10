@@ -1,7 +1,4 @@
-<h2>Cocktails list</h2>
-
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= cocktail.name %></li>
-  <% end %>
-</ul>
+<div class="container mt-5 list">
+  <h2>Cocktails list</h2>
+    <%= render 'components/cards' %>
+</div>

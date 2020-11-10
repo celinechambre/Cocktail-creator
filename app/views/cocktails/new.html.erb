@@ -1,6 +1,9 @@
-<h2>Submit a cocktail</h2>
+<div class="container form">
+	<h2>Submit a cocktail</h2>
+	<p>>> First step is to give the name of your cocktail</p>
 
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit "Save cocktail", class: "btn btn-primary" %>
-<% end %>
+	<%= simple_form_for(@cocktail) do |f| %>
+	  <%= f.input :name %>
+	  <%= f.submit "Save cocktail", class: "btn btn-primary" %>
+	<% end %>
+</div>
