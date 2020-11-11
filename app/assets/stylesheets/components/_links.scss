@@ -1,0 +1,38 @@
+
+.navbar {
+	a:link,
+	a:visited {
+		color: $lightgreen;
+		text-decoration: none;
+		transition: border-bottom 0.2s, color 0.2s
+	}
+	a:hover,
+	a:active {
+		color: $darkgreen;
+	}
+}
+
+.cocktails {
+	a:link,
+	a:visited {
+		color: $white;
+		text-decoration: none;
+	}
+	a:hover,
+	a:active {
+		color: $white;
+	}
+}
+
+.home-banner {
+	a:link,
+	a:visited {
+		color: $background;
+		text-decoration: none;
+		transition: border-bottom 0.2s, color 0.2s
+	}
+	a:hover,
+	a:active {
+		color: $background;
+	}
+}
