@@ -1,5 +1,5 @@
 <div class="container d-flex show mt-5">
-  <div class="row mt-5">
+  <div class="row mt-5 mb-5">
     <div>
       <% if @cocktail.photo.attached? %>
         <%= cl_image_tag @cocktail.photo.key, height: 550, width: 400, crop: :fill %>
@@ -19,14 +19,11 @@
             <i class="fas fa-trash-alt"></i>
           <% end %>
         <% end %>
-        </li>      
-      <%= link_to new_cocktail_dose_path(@cocktail) do%>
-      <i class="fas fa-plus mt-2"></i>
-      <% end %>
-      <br>
-      <%= link_to 'Back to cocktail list', cocktails_path, class: "btn btn-primary mt-4" %> 
+        </li>    
+      <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
       </ul>
       </p>
     </div>
+    <%= link_to 'Back to cocktail list', cocktails_path, class: "btn btn-info mb-5" %> 
   </div>
 </div>
