@@ -1,39 +1,11 @@
-<!-- <div class="container show">
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <div class="col-2">
-        <%= image_tag("https://images.unsplash.com/photo-1601924381523-019b78541b95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80", alt:"image", height: 500, width: 350, crop: :fit) %>
-      </div>
-      <div class="col-10">
-        <div class="card-body">
-          <h2 class="card-title"><%= @cocktail.name %></h2>
-          <p class="card-text">How to make me:
-            <ul><% @cocktail.doses.each do |dose| %>
-              <li><%= dose.ingredient.name %>
-                -
-                 <%= dose.description %>
-                -
-                <%= link_to dose_path(dose.id), method: :delete do %>
-                  <i class="fas fa-trash-alt"></i>
-                <% end %>
-
-              </li>
-              <% end %>
-              <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail) %>
-              <br>
-              <%= link_to 'Back to cocktail list', cocktails_path %> 
-            </ul>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<div class="container d-flex show">
+<div class="container d-flex show mt-5">
   <div class="row mt-5">
     <div>
-      <%= image_tag("https://images.unsplash.com/photo-1601924381523-019b78541b95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80", alt:"image", height: 550, width: 400, crop: :fit) %>
+      <% if @cocktail.photo.attached? %>
+        <%= cl_image_tag @cocktail.photo.key, height: 550, width: 400, crop: :fill %>
+      <% else %>
+        <%= image_tag("https://res.cloudinary.com/dm3wt1pa5/image/upload/v1605099276/dmitry-dreyer-STymCDoVqJI-unsplash_dcmnex.jpg", alt:"image", height: 400, width: 300, crop: :fit) %>
+      <% end %>    
     </div>
     <div class="description">
       <h2 class=""><%= @cocktail.name %></h2>
