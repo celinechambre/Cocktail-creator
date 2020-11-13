@@ -6,17 +6,33 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'json'
+# require 'json'
+# require 'open-uri'
+
+# puts "Creating ingredients..."
+
+# url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+# user_serialized = open(url).read
+# user = JSON.parse(user_serialized)
+
+# user['drinks'].each { |ingredient| 
+#   Ingredient.create(name: ingredient["strIngredient1"])
+# }
+
+# puts "Finished!"
+
 require 'open-uri'
 
-puts "Creating ingredients..."
+puts "Destroy ingredients"
+Ingredient.destroy_all if Rails.env.development?
 
-url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-user_serialized = open(url).read
-user = JSON.parse(user_serialized)
+puts "Destroy Cocktails"
+Cocktail.destroy_all if Rails.env.development?
 
-user['drinks'].each { |ingredient| 
-  Ingredient.create(name: ingredient["strIngredient1"])
-}
-
-puts "Finished!"
+puts "Create ingredients"
+url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+ingredients = JSON.parse(open(url).read)
+ingredients["drinks"].each do |ingredient|
+  i = Ingredient.create(name: ingredient["strIngredient1"])
+  puts "create #{i.name}"
+end
