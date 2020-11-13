@@ -19,7 +19,7 @@ class CocktailsController < ApplicationController
     if @cocktail.save
       redirect_to @cocktail, notice: 'Cocktail was successfully created.'
     else
-      render :new
+      render 'new'
     end  
   end
 
