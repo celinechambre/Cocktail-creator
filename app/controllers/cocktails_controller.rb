@@ -3,6 +3,14 @@ class CocktailsController < ApplicationController
 
   def index
     @cocktails = Cocktail.all
+
+    @markers = @cocktails.geocoded.map do |cocktail|
+      {
+        lat: cocktail.latitude,
+        lng: cocktail.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { cocktail: cocktail })
+      }
+    end
   end
 
   def show
@@ -29,7 +37,7 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :photo)
+    params.require(:cocktail).permit(:name, :address, :photo)
   end
 
 end

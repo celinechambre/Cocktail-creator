@@ -4,6 +4,7 @@
 
 	<%= simple_form_for(@cocktail) do |f| %>
 	  <%= f.input :name %>
+	  <%= f.input :address, :label => "Where was this cocktail born? Please enter a city" %>
 	  <%= f.input :photo, as: :file %>
 	  <%= f.submit "Create cocktail", class: "btn btn-primary", id: "sweet-alert-demo" %>
 	<% end %>

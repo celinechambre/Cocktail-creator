@@ -9,6 +9,7 @@
     </div>
     <div class="description">
       <h2 class=""><%= @cocktail.name %></h2>
+      <p class="">I was created for the first time in <strong><%= @cocktail.address %></strong>!</p>
       <p class="">How to make me:
       <ul><% @cocktail.doses.each do |dose| %>
         <li><%= dose.ingredient.name %>
