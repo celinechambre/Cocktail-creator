@@ -10,6 +10,12 @@
   transition: 0.4s;
 }
 
+.cocktails {
+  img {
+    // object-fit: cover;
+  }
+}
+
 .name {
   text-decoration: none;
   color: white;

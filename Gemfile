@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 gem 'carrierwave', '~> 2.0'
-
+gem 'geocoder'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -55,4 +55,3 @@ gem 'rails-controller-testing', group: [ :test ]
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
-gem 'geocoder'

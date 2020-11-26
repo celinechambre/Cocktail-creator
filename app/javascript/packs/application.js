@@ -12,8 +12,7 @@ import 'bootstrap';
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { loadDynamicBannerText } from '../components/banner';
-import { initMapbox } from '../components/init_mapbox';
-
+import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
@@ -21,6 +20,7 @@ document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
   loadDynamicBannerText();
 });
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
