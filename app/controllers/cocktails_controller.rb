@@ -8,7 +8,8 @@ class CocktailsController < ApplicationController
       {
         lat: cocktail.latitude,
         lng: cocktail.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { cocktail: cocktail })
+        infoWindow: render_to_string(partial: "info_window", locals: { cocktail: cocktail }),
+        image_url: helpers.asset_url('default.jpg')
       }
     end
   end

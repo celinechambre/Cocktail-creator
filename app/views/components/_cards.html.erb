@@ -3,7 +3,7 @@
      <div class="cocktail-card">
      <%= link_to cocktail_path(cocktail) do %>
      <% if cocktail.photo.attached? %>
-        <%= cl_image_tag cocktail.photo.key, height: 400, width: 300, crop: :fill %>
+        <%= cl_image_tag cocktail.photo.key, height: 500, width: 300, crop: :fill, class: "card-image" %>
      <% else %>
        <%= image_tag("https://res.cloudinary.com/dm3wt1pa5/image/upload/v1605099276/dmitry-dreyer-STymCDoVqJI-unsplash_dcmnex.jpg", alt:"image", height: 400, width: 300, crop: :fit) %>
      <% end %>
